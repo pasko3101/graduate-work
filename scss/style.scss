@@ -20,6 +20,9 @@
   @media screen and (min-width: 768px) {
     max-width: 768px;
   }
+  @media screen and (min-width: 1024px) {
+    max-width: 1024px;
+  }
 }
 .background {
   background: linear-gradient(
@@ -28,6 +31,7 @@
     #323264 57.17%,
     #643e72 87.46%
   );
+  padding-bottom: 60px;
   border-radius: 0px 0px 12px 12px;
   box-shadow: 0 20px 0 -10px #cacadb, 0 40px 0 -20px #e7e7f2;
 
@@ -44,6 +48,9 @@
       height: 1024px;
       box-shadow: unset;
     }
+    @media screen and (min-width: 1024px) {
+      height: 768px;
+    }
   }
 }
 .header {
@@ -53,16 +60,25 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   @media screen and (min-width: 768px) {
     width: calc(100% - 90px);
     height: 1024px;
     padding-top: 50px;
   }
+  @media screen and (min-width: 1024px) {
+    height: 768px;
+  }
   &__block {
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
+  &__conteyner {
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      flex-direction: row-reverse;
+      width: 100%;
+    }
   }
   &__bar {
     width: 100%;
@@ -73,11 +89,18 @@
       padding-top: 0;
       justify-content: flex-start;
     }
+    @media screen and (min-width: 1024px) {
+      height: 24px;
+      justify-content: flex-end;
+    }
   }
   &__lang {
     padding: 10px 0;
-    // @media screen and (min-width: 768px) {
-    // }
+    @media screen and (min-width: 1024px) {
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
     &__switcher {
       width: 33px;
       height: 25px;
@@ -139,7 +162,10 @@
   &__nav {
     display: none;
     @media screen and (min-width: 768px) {
-      display: inline-block;
+      display: flex;
+    }
+    @media screen and (min-width: 1024px) {
+      justify-content: flex-end;
     }
     &__link {
       font-weight: 700;
@@ -180,6 +206,11 @@
       height: 60px;
       margin: 30px 0;
     }
+    @media screen and (min-width: 1024px) {
+      height: 38px;
+      width: 100%;
+      margin: 0;
+    }
   }
   &__burgernav {
     width: 100%;
@@ -204,6 +235,10 @@
       justify-content: center;
       flex-grow: 2;
     }
+    @media screen and (min-width: 1024px) {
+      flex-grow: 8;
+      margin: 0;
+    }
   }
   &__bttn {
     display: flex;
@@ -212,6 +247,9 @@
     justify-content: flex-end;
     @media screen and (min-width: 768px) {
       flex-grow: 3;
+    }
+    @media screen and (min-width: 1024px) {
+      flex-grow: 9;
     }
   }
   &__button {
@@ -227,6 +265,13 @@
   &__button:hover {
     border: 2px solid rgba(240, 20, 90, 0.5);
     stroke: #f0145a;
+  }
+}
+.logo__size {
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    height: 60px;
+    width: 130px;
   }
 }
 .social_hover {
@@ -330,11 +375,21 @@
 main {
   overflow: hidden;
 }
+:root {
+  --sizetabs: 451px;
+  --mar-pad: 45px;
+}
 .tabs {
   width: calc(100% - 60px);
   margin: 0 auto;
   @media screen and (min-width: 768px) {
     width: calc(100% - 120px);
+    margin: 60px auto;
+  }
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    height: 303px;
+    align-items: center;
   }
   &__nav {
     display: flex;
@@ -342,6 +397,13 @@ main {
     width: 1018px;
     @media screen and (min-width: 768px) {
       width: 1244px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: calc(100% - var(--sizetabs));
+      height: 100%;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-around;
     }
   }
   &__links {
@@ -356,6 +418,10 @@ main {
       font-size: 38px;
       line-height: 46px;
       margin: 60px 0;
+    }
+    @media screen and (min-width: 1024px) {
+      margin: 0 var(--mar-pad) 0 0;
+      display: flex;
     }
   }
   &__links:hover {
@@ -381,6 +447,12 @@ main {
   padding: 30px 0;
   @media screen and (min-width: 768px) {
     padding: 60px 0;
+  }
+  @media screen and (min-width: 1024px) {
+    width: var(--sizetabs);
+    border-top: 0;
+    border-left: 4px solid rgba(255, 255, 255, 0.3);
+    padding: 0 0 0 var(--mar-pad);
   }
   &__title {
     margin-bottom: 30px;
@@ -429,28 +501,23 @@ main {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 60px;
-
-  &__box {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    @media screen and (min-width: 768px) {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
+  justify-content: space-between;
 }
 .card {
+  margin-top: 30px;
   @media screen and (min-width: 768px) {
     width: calc((100% - 60px) / 2);
+    margin-top: 60px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: calc((100% - 120px) / 3);
   }
   &__img {
     width: 92px;
     height: 92px;
     border-radius: 24px;
     padding: 14px;
-    margin: 30px 0;
+    margin-bottom: 30px;
     background-color: #fff;
   }
   &__title {
@@ -475,6 +542,9 @@ main {
     width: calc(100% - 120px);
     margin: 80px auto 0;
   }
+  @media screen and (min-width: 1024px) {
+    display: flex;
+  }
   &__img {
     display: flex;
     justify-content: center;
@@ -483,6 +553,10 @@ main {
       height: 500px;
       overflow: hidden;
       align-items: center;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 400px;
+      height: 528px;
     }
   }
   &__scroll {
@@ -496,10 +570,18 @@ main {
     width: var(--size);
     height: var(--size);
   }
+  @media screen and (min-width: 1024px) {
+    width: 528px;
+    height: 528px;
+  }
 }
 .slide {
   background: #f5f5fa;
   padding: 30px;
+
+  @media screen and (min-width: 1024px) {
+    width: calc(100% - 400px);
+  }
   &__link {
     font-weight: 700;
     font-size: 14px;
@@ -561,6 +643,9 @@ main {
       background: #1c4280;
       @media screen and (min-width: 768px) {
         width: calc(100% / 3);
+      }
+      @media screen and (min-width: 1024px) {
+        width: calc(100% / 4);
       }
     }
     &__logo:nth-child(2) {
@@ -634,6 +719,18 @@ main {
       justify-content: space-between;
       margin: 30px 0;
     }
+    @media screen and (min-width: 1024px) {
+      width: calc((100% -60px) / 3 * 2);
+      margin: 0;
+    }
+  }
+  &__cardconteyner {
+    @media screen and (min-width: 1024px) {
+      width: 100%;
+      display: flex;
+      margin-top: 30px;
+      justify-content: space-between;
+    }
   }
   &__card {
     width: 100%;
@@ -645,7 +742,9 @@ main {
       width: calc((100% - 30px) / 2);
       margin: 0;
     }
-
+    @media screen and (min-width: 1024px) {
+      width: calc((100% - 30px) / 2);
+    }
     &__img {
       display: flex;
       justify-content: center;
@@ -694,6 +793,9 @@ main {
   @media screen and (min-width: 768px) {
     width: 100%;
   }
+  @media screen and (min-width: 1024px) {
+    width: calc(((100% -60px) / 3) - 30px);
+  }
 }
 .long__img {
   @media screen and (min-width: 768px) {
@@ -708,6 +810,10 @@ main {
   @media screen and (min-width: 768px) {
     width: 648px;
     height: 389px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: calc(500px * 200px / 300px);
+    height: 200px;
   }
 }
 footer {
