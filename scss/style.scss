@@ -4,10 +4,15 @@
   font-size: 0;
   box-sizing: border-box;
 }
+:root {
+  --sizetabs: 453px;
+  --mar-pad: 45px;
+}
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Regular.ttf");
 }
+$f: 100%;
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Bold.ttf");
@@ -32,7 +37,7 @@
     background-image: url(../img/Symbol.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: auto $f;
     height: 100vh;
     box-shadow: 0 45px 0 0 rgba(245, 245, 250, 0.2) inset;
     display: flex;
@@ -45,348 +50,12 @@
     }
   }
 }
-.header {
-  width: calc(100% - 30px);
-  margin: 0 auto;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  flex-basis: auto;
-  @media screen and (min-width: 768px) {
-    width: calc(100% - 120px);
-    padding-top: 50px;
-    flex-grow: 3;
-  }
-  @media screen and (min-width: 1024px) {
-    flex-grow: 6;
-  }
-  &__block {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  &__conteyner {
-    @media screen and (min-width: 1024px) {
-      display: flex;
-      flex-direction: row-reverse;
-      width: 100%;
-    }
-  }
-  &__bar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 5px;
-    @media screen and (min-width: 768px) {
-      padding-top: 0;
-      justify-content: flex-start;
-    }
-    @media screen and (min-width: 1024px) {
-      height: 24px;
-      justify-content: flex-end;
-    }
-  }
-  &__lang {
-    padding: 10px 0;
-    @media screen and (min-width: 1024px) {
-      padding: 0;
-      display: flex;
-      align-items: center;
-    }
-    &__switcher {
-      width: 33px;
-      height: 25px;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 15px;
-      text-align: center;
-      letter-spacing: 1px;
-      color: #fff;
-      padding: 5px 7px;
-      border-radius: 7px;
-      transition: all 0.3s linear;
-    }
-    &__switcher:hover {
-      background-color: #f0145a;
-    }
-  }
-  &__contact {
-    display: flex;
-    align-items: center;
-    @media screen and (min-width: 768px) {
-    }
-  }
-  &__map {
-    display: none;
-    font-size: 16px;
-    line-height: 20px;
-    color: #b3b3ba;
-    @media screen and (min-width: 768px) {
-      display: inline-block;
-    }
-  }
-  .dot::after {
-    content: "";
-    display: none;
-    @media screen and (min-width: 768px) {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      font-size: 16px;
-      border-radius: 50%;
-      margin: 3px 6px;
-      background: #e6e6f0;
-    }
-  }
-  &__phone {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: right;
-    color: #fff;
-  }
-  &__social {
-    display: none;
-    @media screen and (min-width: 768px) {
-      display: inline-block;
-    }
-  }
-  &__nav {
-    display: none;
-    @media screen and (min-width: 768px) {
-      display: flex;
-    }
-    @media screen and (min-width: 1024px) {
-      justify-content: flex-end;
-    }
-    &__link {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 20px;
-      text-align: right;
-      color: #fff;
-      border-bottom: 2px solid rgba(255, 255, 255, 0);
-      transition: all 0.3s linear;
-      & + & {
-        margin-left: 15px;
-      }
-    }
-    &__link:hover {
-      border-bottom: 2px solid #fff;
-    }
-  }
-  &__logo__nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    @media screen and (min-width: 768px) {
-      width: calc(100% - 120px);
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 0;
-    }
-  }
-  &__logo {
-    width: 69.33px;
-    height: 32px;
-    display: flex;
-
-    @media screen and (min-width: 768px) {
-      width: 130px;
-      height: 60px;
-      margin: 30px 0;
-    }
-    @media screen and (min-width: 1024px) {
-      height: 38px;
-      width: 100%;
-      margin: 0;
-    }
-  }
-  &__burgernav {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    @media screen and (min-width: 768px) {
-      display: none;
-    }
-  }
-}
-.heroscreen {
-  width: calc(100% - 30px);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-basis: 100px;
-  flex-grow: 2;
-  @media screen and (min-width: 768px) {
-    width: calc(100% - 120px);
-    flex-grow: 5;
-  }
-  @media screen and (min-width: 1024px) {
-    flex-grow: 7;
-  }
-  &__slogan {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-weight: 700;
-    font-size: 38px;
-    line-height: 46px;
-    text-align: center;
-    color: #fff;
-    margin: 0;
-    @media screen and (min-width: 768px) {
-      justify-content: center;
-    }
-    @media screen and (min-width: 1024px) {
-      flex-grow: 8;
-      margin: 0;
-    }
-  }
-  &__bttn {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    justify-content: flex-end;
-    @media screen and (min-width: 768px) {
-      flex-grow: 3;
-    }
-    @media screen and (min-width: 1024px) {
-      flex-grow: 9;
-    }
-  }
-  &__button {
-    display: block;
-    margin: 0 auto 30px;
-    width: 42px;
-    height: 42px;
-    background-color: #323264;
-    border: 2px solid #9999b2;
-    border-radius: 50%;
-    transition: all 0.3s linear;
-  }
-  &__button:hover {
-    border: 2px solid rgba(240, 20, 90, 0.5);
-    stroke: #f0145a;
-  }
-}
-.logo__size {
-  @media screen and (min-width: 1024px) {
-    display: flex;
-    height: 60px;
-    width: 130px;
-  }
-}
-.social_hover {
-  display: none;
-  transition: all 0.3s linear;
-  @media screen and (min-width: 768px) {
-    display: inline-block;
-  }
-}
-.social_hover:hover {
-  fill: #f0145a;
-}
-.style__link {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.checkbox {
-  display: none;
-}
-.burger-nav {
-  --size: 32px;
-  display: block;
-  width: var(--size);
-  height: var(--size);
-  position: relative;
-  &__line {
-    display: block;
-    position: absolute;
-    width: 18px;
-    height: 2px;
-    background-color: #fff;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    &:first-child {
-      transform: translate(-50%, calc(-50% - 5px));
-    }
-    &:last-child {
-      transform: translate(-50%, calc(-50% + 5px));
-    }
-  }
-}
-.nav {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s linear;
-  background-color: rgba(50, 50, 100, 0.7);
-  padding: 0 8px;
-  &__list {
-    position: absolute;
-    width: calc(100% - 16px);
-    bottom: 0;
-    background: #ffffff;
-    border-radius: 12px 12px 0px 0px;
-    padding: 12px;
-    list-style-type: none;
-  }
-  &__item {
-    & + .nav__item {
-      margin-top: 15px;
-    }
-  }
-  &__link {
-    padding: 7px 0;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    text-align: center;
-    color: #24a3ff;
-    display: block;
-    width: 100%;
-    background: #f5f5fa;
-    border-radius: 12px;
-    text-decoration: none;
-  }
-  &__close-wrapp {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-  }
-  &__close {
-    --size: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: var(--size);
-    height: var(--size);
-  }
-}
-#burger-toggle:checked ~ .nav {
-  opacity: 1;
-  visibility: visible;
-}
-
+@import "./header";
+@import "./heroscreen";
 main {
   overflow: hidden;
 }
-:root {
-  --sizetabs: 451px;
-  --mar-pad: 45px;
-}
+
 .tabs {
   width: calc(100% - 60px);
   margin: 0 auto;
@@ -399,19 +68,22 @@ main {
     height: 303px;
     align-items: center;
   }
+  @media screen and (min-width: 1440px) {
+    width: calc(100% - 360px);
+  }
+  @media screen and (min-width: 1920px) {
+    width: calc(100% - 560px);
+  }
   &__nav {
     display: flex;
     overflow: auto;
-    width: 1018px;
-    @media screen and (min-width: 768px) {
-      width: 1244px;
-    }
     @media screen and (min-width: 1024px) {
-      width: calc(100% - var(--sizetabs));
+      width: 453px;
       height: 100%;
       flex-direction: column;
       align-items: flex-end;
       justify-content: space-around;
+      border-right: 4px solid rgba(255, 255, 255, 0.3);
     }
   }
   &__links {
@@ -422,6 +94,7 @@ main {
     margin: 30px 0;
     text-decoration: none;
     transition: all 0.3s linear;
+    white-space: nowrap;
     @media screen and (min-width: 768px) {
       font-size: 38px;
       line-height: 46px;
@@ -439,7 +112,6 @@ main {
     margin-left: 30px;
   }
 }
-
 .gradient_rght {
   background: linear-gradient(to right, #ef8080 0.84%, #f0145a 99.96%);
   -webkit-background-clip: text;
@@ -457,9 +129,8 @@ main {
     padding: 60px 0;
   }
   @media screen and (min-width: 1024px) {
-    width: var(--sizetabs);
+    width: calc(100% - var(--sizetabs));
     border-top: 0;
-    border-left: 4px solid rgba(255, 255, 255, 0.3);
     padding: 0 0 0 var(--mar-pad);
   }
   &__title {
@@ -485,6 +156,9 @@ main {
   margin: 0 auto;
   @media screen and (min-width: 768px) {
     width: calc(100% - 120px);
+  }
+  @media screen and (min-width: 1920px) {
+    width: calc(100% - 320px);
   }
   &__link {
     font-weight: 700;
@@ -553,18 +227,25 @@ main {
   @media screen and (min-width: 1024px) {
     display: flex;
   }
+  @media screen and (min-width: 1920px) {
+    width: calc(100% - 320px);
+  }
   &__img {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 560px) {
       width: 100%;
       height: 500px;
       align-items: center;
     }
     @media screen and (min-width: 1024px) {
       width: 400px;
-      height: 528px;
+      height: 502px;
+    }
+    @media screen and (min-width: 1440px) {
+      width: 400px;
+      height: 344px;
     }
   }
   &__scroll {
@@ -573,12 +254,17 @@ main {
   }
 }
 .img__size {
+  @media screen and (min-width: 560px) {
+    width: calc(100% + 80px);
+  }
   @media screen and (min-width: 768px) {
     width: calc(100% + 148px);
   }
   @media screen and (min-width: 1024px) {
-    width: 528px;
-    height: 528px;
+    width: calc(100% + 148px);
+  }
+  @media screen and (min-width: 1440px) {
+    width: calc(100% + 28px);
   }
 }
 .slide {
@@ -634,10 +320,19 @@ main {
     text-transform: uppercase;
     color: #323264;
   }
+  @media screen and (min-width: 1920px) {
+    width: calc(100% - 200px);
+    margin: 0 auto;
+    padding-bottom: 60px;
+  }
   &__card {
     @media screen and (min-width: 768px) {
       display: flex;
       flex-wrap: wrap;
+    }
+    @media screen and (min-width: 1920px) {
+      border-radius: 12px;
+      overflow: hidden;
     }
     &__logo {
       width: 100%;
@@ -719,17 +414,6 @@ main {
       margin-top: 10px;
     }
   }
-  // &__cardbox {
-  //   @media screen and (min-width: 768px) {
-  //     display: flex;
-  //     justify-content: space-between;
-  //     margin: 30px 0;
-  //   }
-  //   @media screen and (min-width: 1024px) {
-  //     width: calc((100% -60px) / 3 * 2);
-  //     margin: 0;
-  //   }
-  // }
   &__cardconteyner {
     @media screen and (min-width: 768px) {
       display: flex;
@@ -758,8 +442,39 @@ main {
     &__img {
       display: flex;
       justify-content: center;
-      &__size {
+      @media screen and (min-width: 375px) {
+        width: 100%;
         height: 200px;
+        overflow: hidden;
+        align-items: center;
+      }
+      &__size {
+        width: 100%;
+        height: 100%;
+        @media screen and (min-width: 375px) {
+          width: 708px;
+          height: 425px;
+        }
+        @media screen and (min-width: 768px) {
+          width: 309px;
+          height: 185px;
+        }
+        @media screen and (min-width: 770px) {
+          width: 437px;
+          height: 262px;
+        }
+        @media screen and (min-width: 1024px) {
+          width: calc(500px * 200px / 300px);
+          height: 200px;
+        }
+        @media screen and (min-width: 1025px) {
+          width: 580px;
+          height: 348px;
+        }
+        @media screen and (min-width: 1920px) {
+          width: 513px;
+          height: 308px;
+        }
       }
     }
     &__content {
@@ -798,6 +513,9 @@ main {
   @media screen and (min-width: 768px) {
     width: calc(100% - 120px);
   }
+  @media screen and (min-width: 1920px) {
+    width: calc(100% - 320px);
+  }
 }
 .long_size {
   @media screen and (min-width: 768px) {
@@ -810,7 +528,7 @@ main {
   }
 }
 .long__img {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 375px) {
     width: 100%;
     height: 200px;
     display: flex;
@@ -819,13 +537,25 @@ main {
   }
 }
 .public__img__size {
-  @media screen and (min-width: 768px) {
-    width: 648px;
-    height: 389px;
+  @media screen and (min-width: 375px) {
+    width: 708px;
+    height: 425px;
+  }
+  @media screen and (min-width: 769px) {
+    width: 904px;
+    height: 542px;
   }
   @media screen and (min-width: 1024px) {
     width: calc(500px * 200px / 300px);
     height: 200px;
+  }
+  @media screen and (min-width: 1025px) {
+    width: 580px;
+    height: 348px;
+  }
+  @media screen and (min-width: 1920px) {
+    width: 513px;
+    height: 308px;
   }
 }
 footer {
@@ -842,6 +572,9 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+  @media screen and (min-width: 1920px) {
+    width: calc(100% - 320px);
+  }
   &__location {
     display: flex;
     flex-direction: column;
@@ -850,13 +583,15 @@ footer {
       flex-direction: row;
       align-items: baseline;
     }
+    @media screen and (min-width: 1024px) {
+      width: calc((100% - 120px) / 2);
+      flex-grow: 1;
+    }
     &__address {
       font-size: 16px;
       line-height: 20px;
       color: #323264;
       @media screen and (min-width: 768px) {
-        // width: calc(100%  / 2);
-        // margin-top: 0;
       }
       &::after {
         content: "";
@@ -951,8 +686,12 @@ footer {
     margin-top: 30px;
     text-align: center;
     @media screen and (min-width: 768px) {
-      // width: calc(100%  / 2);
       margin-top: 0;
+    }
+    @media screen and (min-width: 1024px) {
+      width: calc((100% - 120px) / 2);
+      display: flex;
+      justify-content: flex-end;
     }
     &__text {
       font-size: 16px;

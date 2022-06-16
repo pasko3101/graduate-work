@@ -1,0 +1,85 @@
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+$wh: #fff;
+:root {
+  --hnd: 100%;
+  --ffh: 50%;
+}
+.checkbox {
+  display: none;
+}
+.burger-nav {
+  display: block;
+  @include size(32px, 32px);
+  position: relative;
+  &__line {
+    display: block;
+    position: absolute;
+    @include size(18px, 2px);
+    background-color: $wh;
+    top: var(--ffh);
+    left: var(--ffh);
+    transform: translate(-50%, -50%);
+    &:first-child {
+      transform: translate(-50%, calc(-50% - 5px));
+    }
+    &:last-child {
+      transform: translate(-50%, calc(-50% + 5px));
+    }
+  }
+}
+.nav {
+  @include size(var(--hnd), 100vh);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s linear;
+  background-color: rgba(50, 50, 100, 0.7);
+  padding: 0 8px;
+  &__list {
+    position: absolute;
+    width: calc(var(--hnd) - 16px);
+    bottom: 0;
+    background: $wh;
+    border-radius: 12px 12px 0px 0px;
+    padding: 12px;
+    list-style-type: none;
+  }
+  &__item {
+    & + .nav__item {
+      margin-top: 15px;
+    }
+  }
+  &__link {
+    padding: 7px 0;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #24a3ff;
+    display: block;
+    width: 100%;
+    background: #f5f5fa;
+    border-radius: 12px;
+    text-decoration: none;
+  }
+  &__close-wrapp {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  &__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include size(32px, 32px);
+  }
+}
+#burger-toggle:checked ~ .nav {
+  opacity: 1;
+  visibility: visible;
+}
