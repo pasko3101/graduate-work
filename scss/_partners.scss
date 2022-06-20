@@ -1,0 +1,84 @@
+.partners {
+  width: var(--hnd);
+  @extend %df;
+  @extend %f-d_c;
+  &_padding {
+    padding-top: 30px;
+  }
+  &__title {
+    margin: 30px auto;
+    @extend %fw;
+    @include fs-hl(14px, 17px);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $dbl ;
+  }
+  @media screen and (min-width: 1920px) {
+    width: calc(var(--hnd) - 200px);
+    margin: 0 auto;
+    padding-bottom: 60px;
+  }
+  &__card {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    @media screen and (min-width: 1920px) {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    &__logo {
+      @include size(var(--hnd), 120px);
+      @extend %df;
+      border: 0;
+      @extend %j-c_c;
+      @extend %a-i_c;
+      background: #1c4280;
+      @media screen and (min-width: 768px) {
+        width: calc(var(--hnd) / 3);
+      }
+      @media screen and (min-width: 1024px) {
+        width: calc(var(--hnd) / 4);
+      }
+    }
+    &__logo:nth-child(2) {
+      background: #143646;
+    }
+    &__logo:nth-child(3) {
+      background: #f48b30;
+    }
+    &__logo:nth-child(4) {
+      background: #9e4dc3;
+    }
+    &__logo:nth-child(5) {
+      background: #fd9339;
+    }
+    &__logo:nth-child(6) {
+      background: #e2e2e4;
+    }
+    &__logo:nth-child(7) {
+      background: #c71c36;
+    }
+    &__logo:nth-child(8) {
+      background: #dcf3f9;
+    }
+    &__logo:nth-child(9) {
+      background: #eaeaea;
+    }
+    &__logo:nth-child(10) {
+      background: #282240;
+    }
+    &__logo:nth-child(11) {
+      background: #1d4568;
+    }
+    &__logo:nth-child(12) {
+      background: $black;
+    }
+  }
+}
+.partners__none {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}

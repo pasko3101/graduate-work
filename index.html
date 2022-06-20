@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Homepage</title>
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="body">
     <section class="background">
-      <section class="background__img">
+      <section class="background__img background_shadow">
         <header class="header">
           <div class="header__block">
             <div class="header__conteyner">
@@ -62,13 +62,15 @@
                 </div>
               </div>
               <div class="header__logo__nav">
-                <a href="#" class="header__logo">
-                  <img
-                    class="logo__size"
-                    src="./img/Logo.png"
-                    alt="header__logo logo__size"
-                  />
-                </a>
+                <div class="header__logo__services">
+                  <a href="#" class="header__logo">
+                    <img
+                      class="logo__size"
+                      src="./img/Logo.png"
+                      alt="header__logo logo__size"
+                    />
+                  </a>
+                </div>
                 <div class="header__burgernav">
                   <input class="checkbox" type="checkbox" id="burger-toggle" />
                   <label for="burger-toggle" class="burger-nav">
@@ -114,7 +116,6 @@
                 </div>
               </div>
             </div>
-
             <nav class="header__nav">
               <a href="#" class="header__nav__link style__link">about us</a>
               <a href="#" class="header__nav__link style__link">services</a>
@@ -151,9 +152,9 @@
         <section class="tabs">
           <nav class="tabs__nav">
             <a href="#" class="tabs__links gradient_rght">Consistent</a>
-            <a href="#" class="tabs__links">Customer oriented</a>
-            <a href="#" class="tabs__links">Innovative</a>
-            <a href="#" class="tabs__links">Business oriented</a>
+            <a href="#" class="tabs__links hover">Customer oriented</a>
+            <a href="#" class="tabs__links hover">Innovative</a>
+            <a href="#" class="tabs__links hover">Business oriented</a>
           </nav>
           <div class="legal">
             <h1 class="legal__title">We turn the idea of legal services</h1>
@@ -166,7 +167,7 @@
           </div>
         </section>
         <section class="better">
-          <a href="#" class="better__link"
+          <a href="./pages/services.html" class="link__link hover"
             >Services <img src="./img/ArrowRt.svg" alt="ArrowRt"
           /></a>
           <h2 class="better__title gradient_lft">
@@ -179,7 +180,9 @@
                 src="./img/e-commerce.svg"
                 alt="e-commerce"
               />
-              <h3 class="card__title">IT and e-commerce</h3>
+              <a href="#" class="card__title link__link hover"
+                >IT and e-commerce</a
+              >
               <p class="card__text">
                 An endless stream of contracts, tax issues, labor relations,
                 corporate papers - legal work distracts you from doing business.
@@ -188,7 +191,9 @@
             </div>
             <div class="card">
               <img class="card__img" src="./img/support.svg" alt="support" />
-              <h3 class="card__title">Comprehensive daily legal support</h3>
+              <a href="#" class="card__title link__link hover"
+                >Comprehensive daily legal support</a
+              >
               <p class="card__text">
                 In addition, over time, the work will become the same type and
                 uninteresting for a full-time lawyer. And we know very well how
@@ -196,14 +201,15 @@
                 field of information technology in Ukraine.
               </p>
             </div>
-
             <div class="card">
               <img
                 class="card__img"
                 src="./img/corporate.svg"
                 alt="corporate"
               />
-              <h3 class="card__title">Structuring corporate relationships</h3>
+              <a href="#" class="card__title link__link hover"
+                >Structuring corporate relationships</a
+              >
               <p class="card__text">
                 Instead of just providing legal services, we will hire a lawyer
                 or a whole team that will fit into the daily life of your
@@ -212,7 +218,9 @@
             </div>
             <div class="card">
               <img class="card__img" src="./img/trust.svg" alt="trust" />
-              <h3 class="card__title">Building contractual relations</h3>
+              <a href="#" class="card__title link__link hover"
+                >Building contractual relations</a
+              >
               <p class="card__text">
                 Once a week, or week after month, you have your own lawyer by
                 your side. Anyone in the company can catch it at the coffee
@@ -226,9 +234,9 @@
                 src="./img/protection.svg"
                 alt="protection"
               />
-              <h3 class="card__title">
-                Protection of business, intellectual property
-              </h3>
+              <a href="#" class="card__title link__link hover"
+                >Protection of business, intellectual property</a
+              >
               <p class="card__text">
                 And all the other time he will work on new diverse projects, so
                 he will definitely not stop in professional development. One way
@@ -238,7 +246,9 @@
             </div>
             <div class="card">
               <img class="card__img" src="./img/court.svg" alt="court" />
-              <h3 class="card__title">Judicial representation</h3>
+              <a href="#" class="card__title link__link hover"
+                >Judicial representation</a
+              >
               <p class="card__text">
                 Is it a small, medium-sized company or a market leader? Local
                 business or multinational company? Do you have your own legal
@@ -249,12 +259,16 @@
         </section>
       </main>
     </section>
+    <section class="shadow">
+      <div class="shadow__box"></div>
+      <div class="shadow__box shadow_small"></div>
+    </section>
     <section class="slider">
       <div class="slider__img">
         <img class="img__size" src="./img/Alexander.jpg" alt="Alexander" />
       </div>
       <div class="slide">
-        <a href="#" class="slide__link"
+        <a href="#" class="link__link hover"
           >команда <img src="./img/ArrowRt.svg" alt="ArrowRt"
         /></a>
         <h2 class="slide__cite gradient_lft">
@@ -287,29 +301,29 @@
         <div class="partners__card__logo">
           <img src="./img/adtellirent.png" alt="adtellirent" />
         </div>
-        <div class="partners__card__logo phone__none">
+        <div class="partners__card__logo partners__none">
           <img src="./img/clickky.png" alt="clickky" />
         </div>
-        <div class="partners__card__logo phone__none">
+        <div class="partners__card__logo partners__none">
           <img src="./img/ecofasing.png" alt="ecofasing" />
         </div>
-        <div class="partners__card__logo phone__none">
+        <div class="partners__card__logo partners__none">
           <img src="./img/infratek.png" alt="infratek" />
         </div>
-        <div class="partners__card__logo phone__none">
+        <div class="partners__card__logo partners__none">
           <img src="./img/citypark.png" alt="citypark" />
         </div>
-        <div class="partners__card__logo phone__none">
+        <div class="partners__card__logo partners__none">
           <img src="./img/artprint.png" alt="artprint" />
         </div>
-        <div class="partners__card__logo phone__none">
+        <div class="partners__card__logo partners__none">
           <img src="./img/ultimatecard.png" alt="ultimatecard" />
         </div>
       </div>
     </section>
     <section class="public">
       <div class="public__conteyner">
-        <a href="#" class="public__link"
+        <a href="#" class="link__link hover"
           >Publications <img src="./img/ArrowRt.svg" alt="ArrowRt"
         /></a>
         <h2 class="public__title gradient_lft">We have something to tell</h2>
@@ -353,7 +367,6 @@
               </p>
             </div>
           </div>
-
           <div class="public__card long_size">
             <div class="public__card__img long__img">
               <img
@@ -396,7 +409,7 @@
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                class="ftr__contact__social"
+                class="ftr__contact__social social_hover"
                 d="M38 19.1161C38 8.55857 29.4934 0 19 0C8.50658 0 0 8.55857 0 19.1161C0 28.6575 6.94803 36.5659 16.0312 38V24.6419H11.207V19.1161H16.0312V14.9046C16.0312 10.1136 18.8678 7.46723 23.2078 7.46723C25.2866 7.46723 27.4609 7.84059 27.4609 7.84059V12.545H25.0651C22.7048 12.545 21.9688 14.0185 21.9688 15.5302V19.1161H27.2383L26.3959 24.6419H21.9688V38C31.052 36.5659 38 28.6575 38 19.1161Z"
                 fill="#24A3FF"
               />
@@ -406,7 +419,9 @@
           <a href="tel:+380800211927" class="ftr__contact__phone"
             >0800 211 927</a
           >
-          ><a href="mail:contact@forstudy.space" class="ftr__contact__email"
+          ><a
+            href="mail:contact@forstudy.space"
+            class="ftr__contact__email hover"
             >contact@forstudy.space</a
           >
         </div>

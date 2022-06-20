@@ -1,30 +1,14 @@
-:root {
-  --hnd: 100%;
-  --ffh: 50%;
-}
-$wh: #fff;
-@mixin size($w, $h) {
-  width: $w;
-  height: $h;
-}
-%fw {
-  font-weight: 700;
-}
-%fs-lh {
-  font-size: 16px;
-  line-height: 20px;
-}
 .header {
   width: calc(var(--hnd) - 30px);
-  margin: 0 auto;
+  @extend %m0a;
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  @extend %df;
+  @extend %f-d_c;
+  @extend %j-c_s-b;
+  @extend %a-i_c;
   flex-basis: auto;
   @media screen and (min-width: 768px) {
-    width: calc(var(--hnd) - 120px);
+    @include wid120;
     padding-top: 50px;
     flex-grow: 3;
   }
@@ -32,11 +16,11 @@ $wh: #fff;
     flex-grow: 6;
   }
   @media screen and (min-width: 1920px) {
-    width: calc(var(--hnd) - 320px);
+    @include wid320;
   }
   &__block {
-    display: flex;
-    flex-direction: column;
+    @extend %df;
+    @extend %f-d_c;
     width: var(--hnd);
   }
   &__conteyner {
@@ -48,8 +32,8 @@ $wh: #fff;
   }
   &__bar {
     width: var(--hnd);
-    display: flex;
-    justify-content: space-between;
+    @extend %df;
+    @extend %j-c_s-b;
     padding-top: 5px;
     @media screen and (min-width: 768px) {
       padding-top: 0;
@@ -70,27 +54,26 @@ $wh: #fff;
     &__switcher {
       @include size(33px, 25px);
       @extend %fw;
-      font-size: 12px;
-      line-height: 15px;
-      text-align: center;
+      @include fs-hl(12px, 15px);
+      @extend %t-a_c;
       letter-spacing: 1px;
       color: $wh;
       padding: 5px 7px;
       border-radius: 7px;
-      transition: all 0.3s linear;
+      @extend %transition;
     }
     &__switcher:hover {
-      background-color: #f0145a;
+      background-color: $red;
     }
   }
   &__contact {
-    display: flex;
-    align-items: center;
+    @extend %df;
+    @extend %a-i_c;
     @media screen and (min-width: 768px) {
     }
   }
   &__map {
-    display: none;
+    @extend %dn;
     @extend %fs-lh;
     color: #b3b3ba;
     @media screen and (min-width: 768px) {
@@ -98,31 +81,23 @@ $wh: #fff;
     }
   }
   .dot::after {
-    content: "";
-    display: none;
-    @media screen and (min-width: 768px) {
-      display: inline-block;
-      @include size(6px, 6px);
-      font-size: 16px;
-      border-radius: 50%;
-      margin: 3px 6px;
-      background: #e6e6f0;
-    }
+    @extend %after;
   }
   &__phone {
     @extend %fw;
     @extend %fs-lh;
-    text-align: right;
+    @extend %t-a_r;
     color: $wh;
   }
   &__social {
-    display: none;
+    @extend %dn;
+    @extend %transition;
     @media screen and (min-width: 768px) {
       display: inline-block;
     }
   }
   &__nav {
-    display: none;
+    @extend %dn;
     @media screen and (min-width: 768px) {
       display: flex;
     }
@@ -132,47 +107,69 @@ $wh: #fff;
     &__link {
       @extend %fw;
       @extend %fs-lh;
-      text-align: right;
+      @extend %t-a_r;
       color: $wh;
       border-bottom: 2px solid rgba(255, 255, 255, 0);
-      transition: all 0.3s linear;
+      @extend %transition;
       & + & {
         margin-left: 15px;
       }
     }
     &__link:hover {
-      border-bottom: 2px solid $wh;
+      border-bottom: 2px solid $red;
+      color: $red;
     }
   }
   &__logo__nav {
     width: var(--hnd);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @extend %df;
+    @extend %j-c_s-b;
+    @extend %a-i_c;
     margin-top: 20px;
     @media screen and (min-width: 768px) {
-      width: calc(var(--hnd) - 120px);
+      width: calc(var(--hnd) - 210px);
       flex-direction: column;
       align-items: flex-start;
       margin-top: 0;
     }
   }
   &__logo {
+    &__services {
+      @extend %df;
+      align-items: flex-start;
+      @media screen and (min-width: 768px) {
+        margin: 30px 0;
+      }
+      @media screen and (min-width: 1024px) {
+        margin: 0;
+      }
+    }
     @include size(69px, 32px);
-    display: flex;
+    @extend %df;
 
     @media screen and (min-width: 768px) {
       @include size(130px, 60px);
-      margin: 30px 0;
     }
     @media screen and (min-width: 1024px) {
       @include size(var(--hnd), 38px);
-      margin: 0;
+    }
+  }
+  &__slash {
+    margin: 0 4px;
+    @media screen and (min-width: 768px) {
+      @include size(21px, 47px);
+    }
+  }
+  &__services {
+    @include fs-hl(20px, 24px);
+    color: $wh;
+    @media screen and (min-width: 768px) {
+      @include fs-hl(36px, 44px);
     }
   }
   &__burgernav {
     width: var(--hnd);
-    display: flex;
+    @extend %df;
     justify-content: flex-end;
     @media screen and (min-width: 768px) {
       display: none;
@@ -184,16 +181,6 @@ $wh: #fff;
     display: flex;
     @include size(130px, 60px);
   }
-}
-.social_hover {
-  display: none;
-  transition: all 0.3s linear;
-  @media screen and (min-width: 768px) {
-    display: inline-block;
-  }
-}
-.social_hover:hover {
-  fill: #f0145a;
 }
 .style__link {
   text-decoration: none;

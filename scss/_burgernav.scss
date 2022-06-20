@@ -1,47 +1,38 @@
-@mixin size($w, $h) {
-  width: $w;
-  height: $h;
-}
-$wh: #fff;
-:root {
-  --hnd: 100%;
-  --ffh: 50%;
-}
 .checkbox {
   display: none;
 }
 .burger-nav {
-  display: block;
+  @extend %db;
   @include size(32px, 32px);
   position: relative;
   &__line {
-    display: block;
-    position: absolute;
+    @extend %db;
+    @extend %pa;
     @include size(18px, 2px);
     background-color: $wh;
-    top: var(--ffh);
-    left: var(--ffh);
-    transform: translate(-50%, -50%);
+    top: var(--fh);
+    left: var(--fh);
+    transform: translate(var(--ffh), var(--ffh));
     &:first-child {
-      transform: translate(-50%, calc(-50% - 5px));
+      transform: translate(var(--ffh), calc(var(--ffh) - 5px));
     }
     &:last-child {
-      transform: translate(-50%, calc(-50% + 5px));
+      transform: translate(var(--ffh), calc(var(--ffh) + 5px));
     }
   }
 }
 .nav {
   @include size(var(--hnd), 100vh);
-  position: absolute;
+  @extend %pa;
   top: 0;
   left: 0;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s linear;
+  @extend %transition;
   background-color: rgba(50, 50, 100, 0.7);
   padding: 0 8px;
   &__list {
-    position: absolute;
+    @extend %pa;
     width: calc(var(--hnd) - 16px);
     bottom: 0;
     background: $wh;
@@ -55,27 +46,26 @@ $wh: #fff;
     }
   }
   &__link {
+    @extend %db;
     padding: 7px 0;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    text-align: center;
+    @extend %fw;
+    @include fs-hl(24px, 29px);
+    @extend %t-a_c;
     color: #24a3ff;
-    display: block;
-    width: 100%;
+    width: var(--hnd);
     background: #f5f5fa;
     border-radius: 12px;
     text-decoration: none;
   }
   &__close-wrapp {
-    display: flex;
+    @extend %df;
     justify-content: flex-end;
     margin-bottom: 20px;
   }
   &__close {
-    display: flex;
+    @extend %df;
     justify-content: center;
-    align-items: center;
+    @extend %a-i_c;
     @include size(32px, 32px);
   }
 }

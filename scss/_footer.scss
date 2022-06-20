@@ -1,0 +1,132 @@
+footer {
+  background-color: $gwh;
+}
+.ftr {
+  @extend %wid60;
+  @extend %m0a;
+  padding: 30px 0;
+  border-top: 2px solid #e6e6f0;
+  @media screen and (min-width: 768px) {
+    @include wid120;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 1920px) {
+    @include wid320;
+  }
+  &__location {
+    @extend %df;
+    @extend %f-d_c;
+    @extend %a-i_c;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      align-items: baseline;
+    }
+    @media screen and (min-width: 1024px) {
+      width: calc((var(--hnd) - 120px) / 2);
+      flex-grow: 1;
+    }
+    &__address {
+      @extend %fs-lh;
+      color: $dbl;
+      @media screen and (min-width: 768px) {
+      }
+      &::after {
+        @extend %after;
+      }
+    }
+    &__map {
+      @extend %fw;
+      @include fs-hl(12px, 15px);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: $blue;
+      margin-top: 10px;
+      @extend %t-d_n;
+      @media screen and (min-width: 768px) {
+        margin-top: 0;
+      }
+    }
+  }
+  &__contact {
+    @extend %df;
+    @extend %f-d_c;
+    @extend %a-i_c;
+    margin-top: 21px;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      order: 3;
+    }
+    &__social {
+      @extend %transition;
+    }
+     &__phone {
+      @extend %fw;
+      @extend %fs-lh;
+      color: #46466e;
+      margin: 10px auto;
+      @extend %t-d_n;
+      &::before {
+        @extend %after;
+      }
+      &::after {
+        @extend %after;
+      }
+      @media screen and (min-width: 768px) {
+        margin: 0;
+      }
+    }
+    &__email {
+      @extend %fw;
+      @extend %fs-lh;
+      color: $blue;
+      @extend %t-d_n;
+    }
+  }
+  &__copyright {
+    margin-top: 30px;
+    @extend %t-a_c;
+    @media screen and (min-width: 768px) {
+      margin-top: 0;
+    }
+    @media screen and (min-width: 1024px) {
+      width: calc((var(--hnd) - 120px) / 2);
+      display: flex;
+      justify-content: flex-end;
+    }
+    &__text {
+      @extend %fs-lh;
+      @extend %t-a_c;
+      color: $grey;
+    }
+  }
+}
+.ftr_services {
+  @media screen and (min-width: 768px) {
+    width: calc(var(--hnd) - 370px);
+  }
+  @media screen and (min-width: 1024px) {
+    @include wid120;
+  }
+  @media screen and (min-width: 1920px) {
+    @include wid320;
+  }
+}
+.ftr_contact {
+  @media screen and (min-width: 768px) {
+    order: 0;
+  }
+  @media screen and (min-width: 1024px) {
+    order: 3;
+  }
+}
+.ftr_copyright {
+  @media screen and (min-width: 768px) {
+    margin: 30px auto 0;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 0;
+  }
+}

@@ -1,56 +1,39 @@
-:root {
-  --hnd: 100%;
-  --ffh: 50%;
-}
-$wh: #fff;
-@mixin size($w, $h) {
-  width: $w;
-  height: $h;
-}
-%fw {
-  font-weight: 700;
-}
-%fs-lh {
-  font-size: 16px;
-  line-height: 20px;
-}
 .heroscreen {
   width: calc(var(--hnd) - 30px);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @extend %m0a;
+  @extend %df;
+  @extend %f-d_c;
+  @extend %j-c_s-b;
   flex-basis: 100px;
   flex-grow: 2;
   @media screen and (min-width: 768px) {
-    width: calc(var(--hnd) - 120px);
+    @include wid320;
     flex-grow: 5;
   }
   @media screen and (min-width: 1024px) {
     flex-grow: 7;
   }
   &__slogan {
-    display: flex;
+    @extend %df;
     justify-content: center;
     width: var(--hnd);
     @extend %fw;
-    font-size: 38px;
-    line-height: 46px;
-    text-align: center;
+    @include fs-hl(38px, 46px);
+    @extend %t-a_c;
     color: $wh;
     margin: 0;
-    @media screen and (min-width: 768px) {
-      justify-content: center;
-    }
+    // @media screen and (min-width: 768px) {
+    //   justify-content: center;
+    // }
     @media screen and (min-width: 1024px) {
       flex-grow: 8;
       margin: 0;
     }
   }
   &__bttn {
-    display: flex;
+    @extend %df;
+    @extend %f-d_c;
     flex-grow: 1;
-    flex-direction: column;
     justify-content: flex-end;
     @media screen and (min-width: 768px) {
       flex-grow: 3;
@@ -60,17 +43,16 @@ $wh: #fff;
     }
   }
   &__button {
-    display: block;
+    @extend %db;
     margin: 0 auto 30px;
-    width: 42px;
-    height: 42px;
+    @include size(42px, 42px);
     background-color: #323264;
     border: 2px solid #9999b2;
-    border-radius: 50%;
-    transition: all 0.3s linear;
+    border-radius: var(--fh);
+    @extend %transition;
   }
   &__button:hover {
     border: 2px solid rgba(240, 20, 90, 0.5);
-    stroke: #f0145a;
+    stroke: $red;
   }
 }

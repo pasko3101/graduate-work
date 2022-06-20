@@ -1,0 +1,139 @@
+.public {
+  width: var(--hnd);
+  background: $gwh;
+  &__title {
+    @extend %fw;
+    @include fs-hl(30px, 37px);
+    margin-top: 5px;
+    @media screen and (min-width: 768px) {
+      @include fs-hl(38px, 46px);
+      margin-top: 10px;
+    }
+  }
+  &__cardconteyner {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 30px;
+      @media screen and (min-width: 1024px) {
+        width: var(--hnd);
+        justify-content: space-between;
+      }
+    }
+  }
+  &__card {
+    width: var(--hnd);
+    margin: 30px auto 0;
+    @extend %o_h;
+    background-color: $wh;
+    border-radius: 8px;
+    @media screen and (min-width: 768px) {
+      width: calc((var(--hnd) - 30px) / 2);
+      margin: 0;
+    }
+    @media screen and (min-width: 1024px) {
+      width: calc((var(--hnd) - 60px) / 3);
+    }
+    &__img {
+      @extend %df;
+      @extend %j-c_c;
+      @media screen and (min-width: 375px) {
+        @include size(var(--hnd), 200px);
+        overflow: hidden;
+        align-items: center;
+      }
+      &__size {
+        @include size(var(--hnd), var(--hnd));
+        @media screen and (min-width: 375px) {
+          @include size(708px, 425px);
+        }
+        @media screen and (min-width: 768px) {
+          @include size(309px, 185px);
+        }
+        @media screen and (min-width: 770px) {
+          @include size(437px, 262px);
+        }
+        @media screen and (min-width: 1024px) {
+          @include size(calc(500px * 200px / 300px), 200px);
+        }
+        @media screen and (min-width: 1025px) {
+          @include size(580px, 348px);
+        }
+        @media screen and (min-width: 1920px) {
+          @include size(513px, 308px);
+        }
+      }
+    }
+    &__content {
+      &__title {
+        @extend %fw;
+        @extend %fs-lh;
+        color: $blue;
+        margin: 30px 30px 0;
+      }
+      &__data {
+        @extend %db;
+        @extend %fw;
+        @include fs-hl(12px, 15px);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $grey;
+        margin: 15px 30px;
+      }
+      &__text {
+        @include fs-hl(14px, 22px);
+        color: $black;
+        border-top: 4px solid $igr;
+        margin: 0 30px 30px;
+        padding-top: 15px;
+      }
+    }
+  }
+}
+.public__conteyner {
+  @extend %wid60;
+  @extend %m0a;
+  padding: 30px 0;
+  @media screen and (min-width: 768px) {
+    @include wid120;
+  }
+  @media screen and (min-width: 1920px) {
+    @include wid320;
+  }
+}
+.long_size {
+  @media screen and (min-width: 768px) {
+    width: var(--hnd);
+    margin-top: 30px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: calc(((var(--hnd) - 60px) / 3) - 30px);
+    margin-top: 0;
+  }
+}
+.long__img {
+  @media screen and (min-width: 375px) {
+    @include size(var(--hnd), 200px);
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+  }
+}
+.public__img__size {
+  @media screen and (min-width: 375px) {
+    @include size(708px, 425px);
+  }
+  @media screen and (min-width: 769px) {
+    @include size(904px, 542px);
+  }
+  @media screen and (min-width: 1024px) {
+    @include size(calc(500px * 200px / 300px), 200px);
+  }
+  @media screen and (min-width: 1025px) {
+    @include size(580px, 348px);
+  }
+  @media screen and (min-width: 1920px) {
+    @include size(513px, 308px);
+  }
+}

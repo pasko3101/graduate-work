@@ -1,0 +1,76 @@
+.slider {
+  @extend %wid60;
+  margin: 30px auto 0;
+  @extend %o_h;
+  border-radius: 12px;
+  @media screen and (min-width: 768px) {
+    @include wid120;
+    margin: 80px auto 0;
+  }
+  @media screen and (min-width: 1024px) {
+    display: flex;
+  }
+  @media screen and (min-width: 1920px) {
+    @include wid320;
+  }
+  &__img {
+    @extend %df;
+    @extend %j-c_c;
+    @extend %o_h;
+    @media screen and (min-width: 560px) {
+      @include size(var(--hnd), 500px);
+      align-items: center;
+    }
+    @media screen and (min-width: 1024px) {
+      @include size(400px, 502px);
+    }
+    @media screen and (min-width: 1440px) {
+      @include size(400px, 344px);
+    }
+  }
+  &__scroll {
+    @extend %db;
+    margin: 30px auto;
+  }
+}
+.img__size {
+  @media screen and (min-width: 560px) {
+    width: calc(var(--hnd) + 80px);
+  }
+  @media screen and (min-width: 768px) {
+    width: calc(var(--hnd) + 148px);
+  }
+  @media screen and (min-width: 1024px) {
+    width: calc(var(--hnd) + 148px);
+  }
+  @media screen and (min-width: 1440px) {
+    width: calc(var(--hnd) + 28px);
+  }
+}
+.slide {
+  background: $gwh;
+  padding: 30px;
+
+  @media screen and (min-width: 1024px) {
+    width: calc(var(--hnd) - 400px);
+  }
+  &__cite {
+    margin-top: 5px;
+    @extend %fw;
+    @include fs-hl(30px, 37px);
+    word-wrap: break-word;
+    @media screen and (min-width: 768px) {
+      @include fs-hl(38px, 46px);
+    }
+  }
+  &__name {
+    @extend %fw;
+    @extend %fs-lh;
+    color: $grey;
+    margin: 30px 0 6px;
+  }
+  &__post {
+    @include fs-hl(14px, 22px);
+    color: $grey;
+  }
+}
