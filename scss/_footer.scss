@@ -62,7 +62,7 @@ footer {
     &__social {
       @extend %transition;
     }
-     &__phone {
+    &__phone {
       @extend %fw;
       @extend %fs-lh;
       color: #46466e;
@@ -83,6 +83,7 @@ footer {
       @extend %fs-lh;
       color: $blue;
       @extend %t-d_n;
+      @extend %transition;
     }
   }
   &__copyright {

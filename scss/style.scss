@@ -55,13 +55,14 @@
     @include shadow(calc(var(--hnd) - 80px), #e7e7f2);
   }
 }
-.link__link {
+.link__style {
   @extend %fw;
   @include fs-hl(14px, 17px);
   letter-spacing: 1px;
   text-transform: uppercase;
   color: $blue;
   @extend %t-d_n;
+  @extend %transition;
 }
 .hover {
   &:hover {
@@ -70,6 +71,25 @@
 }
 .social_hover:hover {
   fill: $red;
+}
+.link_after {
+  @extend %pr;
+  &::after {
+    @extend %pa;
+    top: 4px;
+    right: -11px;
+    content: "";
+    @extend %db;
+    @include size(6px, 6px);
+    border-right: 2px solid $blue;
+    border-top: 2px solid $blue;
+    transform: rotate(45deg);
+    @extend %transition;
+  }
+  &:hover::after {
+    border-right: 2px solid $red;
+    border-top: 2px solid $red;
+  }
 }
 .gradient_rght {
   @include gradient(right);

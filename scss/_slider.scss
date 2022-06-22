@@ -9,42 +9,31 @@
   }
   @media screen and (min-width: 1024px) {
     display: flex;
+    // height: inherit;
   }
   @media screen and (min-width: 1920px) {
     @include wid320;
   }
   &__img {
     @extend %df;
-    @extend %j-c_c;
-    @extend %o_h;
+    background-image: url(../img/Alexander.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    @include size(var(--hnd), 500px);
     @media screen and (min-width: 560px) {
-      @include size(var(--hnd), 500px);
-      align-items: center;
+      background-size: 100% auto;
     }
     @media screen and (min-width: 1024px) {
-      @include size(400px, 502px);
+      @include size(400px, inherit);
+      background-size: auto 100%;
     }
-    @media screen and (min-width: 1440px) {
-      @include size(400px, 344px);
+    @media screen and (min-width: 1184px) {
+      background-size: 100% auto;
     }
   }
   &__scroll {
     @extend %db;
     margin: 30px auto;
-  }
-}
-.img__size {
-  @media screen and (min-width: 560px) {
-    width: calc(var(--hnd) + 80px);
-  }
-  @media screen and (min-width: 768px) {
-    width: calc(var(--hnd) + 148px);
-  }
-  @media screen and (min-width: 1024px) {
-    width: calc(var(--hnd) + 148px);
-  }
-  @media screen and (min-width: 1440px) {
-    width: calc(var(--hnd) + 28px);
   }
 }
 .slide {

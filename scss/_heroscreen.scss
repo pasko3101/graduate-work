@@ -43,6 +43,8 @@
     }
   }
   &__button {
+    @extend %pr;
+    // position: relative;
     @extend %db;
     margin: 0 auto 30px;
     @include size(42px, 42px);
@@ -50,9 +52,28 @@
     border: 2px solid #9999b2;
     border-radius: var(--fh);
     @extend %transition;
+    cursor: pointer;
+  }
+  &__button::after {
+    @extend %pa;
+    // position: absolute;
+    top: 8px;
+    left: 12px;
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    // border-left: 3px solid brown;
+    border-right: 2px solid $wh;
+    border-bottom: 2px solid $wh;
+    transform: rotate(45deg);
+    @extend %transition;
+  }
+  &__button:hover::after {
+    border-right: 2px solid $red;
+    border-bottom: 2px solid $red;
   }
   &__button:hover {
     border: 2px solid rgba(240, 20, 90, 0.5);
-    stroke: $red;
   }
 }
